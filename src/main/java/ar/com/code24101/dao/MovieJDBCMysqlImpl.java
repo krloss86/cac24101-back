@@ -46,7 +46,7 @@ public class MovieJDBCMysqlImpl implements MovieDAO{
     @Override
     public void create(MovieDTO movieDto) {
         //TPH: 
-        //INSER INTO....
+        //INSERT INTO....
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'create'");
     }
