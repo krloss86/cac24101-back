@@ -1,10 +1,12 @@
 package ar.com.code24101.dao;
 
-import ar.com.code24101.domain.Movie;
-import ar.com.code24101.dto.MovieDTO;
+import java.util.ArrayList;
 
+import ar.com.code24101.domain.Movie;
 public interface MovieDAO {
 
     public Movie getById(Long id);
-    public void create(MovieDTO movieDto);
+    public void create(Movie movieDto);
+    public ArrayList<Movie> findAll();/*ver como agregar LIMIT Y OFFSET */
+	public void update(Movie movie);
 }

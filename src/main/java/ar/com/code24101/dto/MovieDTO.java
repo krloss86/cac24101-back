@@ -8,8 +8,21 @@ public class MovieDTO {
     private String email;
     private Long tipoClienteId;
     
-    public MovieDTO() {
-    
+    public MovieDTO(String nombre, String apellido, String imagen, String email, Long tipoClienteId) {        
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.imagen = imagen;
+        this.email = email;
+        this.tipoClienteId = tipoClienteId;
+    }
+
+    public MovieDTO(Long id, String nombre, String apellido, String imagen, String email, Long tipoClienteId) {        
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.imagen = imagen;
+        this.email = email;
+        this.tipoClienteId = tipoClienteId;//tph: refactor!
     }
 
     public Long getId() {
@@ -59,6 +72,13 @@ public class MovieDTO {
     public void setTipoClienteId(Long tipoClienteId) {
         this.tipoClienteId = tipoClienteId;
     }
+    
+    /*
+    public MovieError validate() {
+        //aplico todas la valicaciones
+        return MovieError;
+    }
+    */
 
     @Override
     public String toString() {

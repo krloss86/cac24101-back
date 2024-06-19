@@ -1,5 +1,7 @@
 package ar.com.code24101.service;
 
+import java.util.ArrayList;
+
 import ar.com.code24101.dao.MovieDAO;
 import ar.com.code24101.dao.MovieJDBCMysqlImpl;
 import ar.com.code24101.domain.Movie;
@@ -19,12 +21,29 @@ public class MovieService {
     }
 
     public void crear(MovieDTO dto) {
-        /*Movie movie = new Movie(dto.getNombre(), 
+
+        Movie movie = new Movie(dto.getNombre(), 
             dto.getApellido(),
-            dto.getEmail(),
             dto.getImagen(),
-            dto.getTipoClienteId());*/
-        this.dao.create(dto);//
+            dto.getEmail(),
+            dto.getTipoClienteId());
+
+        this.dao.create(movie);//ctrl+click
+    }
+
+    public ArrayList<Movie> listarMovies() {
+        return this.dao.findAll();
+    }
+
+    public void actualizar(MovieDTO dto) {
+        Movie movie = new Movie(
+            dto.getId(),
+            dto.getNombre(), 
+            dto.getApellido(),
+            dto.getImagen(),
+            dto.getEmail(),
+            dto.getTipoClienteId());
+        this.dao.update(movie);
     }
 }
  

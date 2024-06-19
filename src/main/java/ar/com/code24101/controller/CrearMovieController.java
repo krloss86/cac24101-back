@@ -1,24 +1,22 @@
 package ar.com.code24101.controller;
 
+import ar.com.code24101.dto.MovieDTO;
 import ar.com.code24101.service.MovieService;
 
 public class CrearMovieController {
 
-    public static void main(String[] args) {    
-        //todos vienen desde un form
-        String nomrbe = "carlos";
+    public static void main(String[] args) {            
+        String nombre = "carlos";
         String apellido = "lopez";
-        String email = "email@bla.COM.AR";
+        String email = "email@bla.com";
         String imString = "HTTP://asdassd.-cpomar";
         Long tipoClienteId = 1L;
+        Long id = 1L;
         
+        MovieDTO movieDto = new MovieDTO(id,nombre, apellido, imString, email, tipoClienteId);
+    
         MovieService service = new MovieService();
 
-        try{
-            
-        }catch(Exception e) {
-
-        }
-        
+        service.actualizar(movieDto);
     }
 }
