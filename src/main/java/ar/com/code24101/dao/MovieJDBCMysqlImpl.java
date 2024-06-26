@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import ar.com.code24101.domain.Movie;
-import ar.com.code24101.dto.MovieDTO;
 
 public class MovieJDBCMysqlImpl implements MovieDAO{
 

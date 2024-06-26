@@ -8,6 +8,10 @@ public class MovieDTO {
     private String email;
     private Long tipoClienteId;
     
+    public MovieDTO(){
+
+    }
+
     public MovieDTO(String nombre, String apellido, String imagen, String email, Long tipoClienteId) {        
         this.nombre = nombre;
         this.apellido = apellido;
