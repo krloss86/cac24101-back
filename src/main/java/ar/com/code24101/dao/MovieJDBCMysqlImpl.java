@@ -127,4 +127,26 @@ public class MovieJDBCMysqlImpl implements MovieDAO{
             AdministradorDeConexiones.desconectar(connection);
         }    
     }
+
+    @Override
+    public void delete(Long id) {
+        String sql = "DELETE FROM clientes where id = ?";
+
+        Connection connection = AdministradorDeConexiones.conectar();
+
+        try {
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setLong(1, id);
+
+            pst.executeUpdate();
+            if(pst.getUpdateCount() == 0) {
+                throw new RuntimeException("No se pudo eliminar el registro");
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }finally {
+            AdministradorDeConexiones.desconectar(connection);
+        } 
+    }
 }

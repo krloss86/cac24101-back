@@ -9,4 +9,5 @@ public interface MovieDAO {
     public void create(Movie movieDto);
     public ArrayList<Movie> findAll();/*ver como agregar LIMIT Y OFFSET */
 	public void update(Movie movie);
+    public void delete(Long id);
 }

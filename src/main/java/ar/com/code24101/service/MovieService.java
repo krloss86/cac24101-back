@@ -45,5 +45,9 @@ public class MovieService {
             dto.getTipoClienteId());
         this.dao.update(movie);
     }
+
+    public void eliminar(Long id) {
+       this.dao.delete(id);
+    }
 }
  

@@ -38,7 +38,7 @@ public class CrearMovieController extends HttpServlet {
 
         service.crear(movieDto);
 
-        resp.setStatus(200);
+        resp.setStatus(HttpServletResponse.SC_CREATED);
     }
 
 }
