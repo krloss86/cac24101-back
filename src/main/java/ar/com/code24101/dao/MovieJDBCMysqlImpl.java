@@ -104,7 +104,7 @@ public class MovieJDBCMysqlImpl implements MovieDAO{
 
         //tph: ver como quitar esa , del final!
 
-        String sql = "UPDATE clientes set (nombre, apellido,email, imagen, tipos_clientes_id) values(?,?,?,?,?) where id = ?";
+        String sql = "UPDATE clientes set nombre=?, apellido=?, email=?, imagen=?, tipos_clientes_id=? WHERE id=?";
 
         Connection connection = AdministradorDeConexiones.conectar();
         try {
