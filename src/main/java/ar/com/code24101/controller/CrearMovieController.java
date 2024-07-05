@@ -20,9 +20,9 @@ public class CrearMovieController extends HttpServlet {
     ) throws ServletException, IOException {
 
         //el json que viene, se atrapa así:
-        String json = req.getReader()
+        /*String json = req.getReader()
 				.lines()
-				.collect(Collectors.joining(System.lineSeparator()));
+				.collect(Collectors.joining(System.lineSeparator()));*/
             
         //System.out.println(json);
 
@@ -30,7 +30,7 @@ public class CrearMovieController extends HttpServlet {
         //usando jackson: pasamos de texto a objetos
         ObjectMapper mapper = new ObjectMapper();
 
-        MovieDTO movieDto = mapper.readValue(json, MovieDTO.class);
+        MovieDTO movieDto = mapper.readValue(req.getReader(), MovieDTO.class);
 
         MovieService service = new MovieService();
 

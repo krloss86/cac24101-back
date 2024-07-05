@@ -22,7 +22,7 @@ public class CorsFilter implements Filter {
 
 		//esto viene desde el front
 		String origin = ((HttpServletRequest) request).getHeader("origin");
-
+		
 		//ese front esta permido?
 		if (origin != null && origins.contains(origin)) {
 			((HttpServletResponse) response).addHeader("Access-Control-Allow-Origin", origin);
